@@ -12,5 +12,7 @@ const renderAllHTML = async () => {
     mainContainer.innerHTML = composedHTML
 }
 
+document.addEventListener("newOrder", renderAllHTML)
+
 renderAllHTML()
 

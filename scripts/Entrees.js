@@ -1,6 +1,17 @@
+import { entreeSet } from "./TransientState.js"
+
+
+const handleEntreeChoice = (event) => {
+    if (event.target.name === "entree") {
+        entreeSet(parseInt(event.target.value))
+    }
+}
+
 export const Entrees = async () => {
     const response = await fetch("http://localhost:8088/entrees") 
     const entree = await response.json()
+
+    document.addEventListener("change", handleEntreeChoice)
 
     let html =  `
     <section class="entree-option-list">

@@ -2,12 +2,21 @@ import { Entrees } from "./Entrees.js"
 import { Veggies } from "./Vegetables.js"
 import { Sides } from "./SideDishes.js" 
 import { Sales } from "./Sales.js"
+import { placeOrder } from "./TransientState.js"
+
+const handleOrder = (clickEvent) => {
+    if (clickEvent.target.id === "purchase") {
+        placeOrder()
+    }
+}
 
 export const FoodTruck = async () => {
-    const salesHTML = Sales()
+    const salesHTML = await Sales()
     const entreeHTML = await Entrees()
     const vegetableHTML = await Veggies()
     const sideHTML = await Sides()
+
+    document.addEventListener("click", handleOrder)
 
     return `
         <header class="header">
