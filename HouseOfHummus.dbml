@@ -16,7 +16,7 @@ table sides {
     price int 
 }
 
-table purchases {
+table orders {
     id int [pk]
     entreeId int [ref: > entrees.id]
     vegetablesId int [ref: > vegetables.id]

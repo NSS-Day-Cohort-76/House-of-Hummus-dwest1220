@@ -56,10 +56,13 @@ sequenceDiagram
 > 🧨 Before you click the "Assessment Complete" button on the Learning Platform, add your answers below for each question and make a commit. It is your option to request a face-to-face meeting with a coach for a vocabulary review.
 
 1. Should transient state be represented in a database diagram? Why, or why not?
-   > Your answer here
+   > No, the transient state data is never saved permanently so it should not be displayed in the diagram.
+
 2. In the **FoodTruck** module, you are **await**ing the invocataion of all of the component functions _(e.g. sales, veggie options, etc.)_. Why must you use the `await` keyword there? Explain what happens if you remove it.
-   > Your answer here
+   > Await must be used because the data that the invocations access is returned as promises, and we must tell the program to wait to execute until the data is fully retrieved. If not, the program will try to run on the 'promise' and not the data that we need. 
+
 3. When the user is making choices by selecting radio buttons, explain how that data is retained so that the **Purchase Combo** button works correctly.
-   > Your answer here
+   > When the user selects on option inside of a radio button, it triggers the eventListener which stores the selection via its respective setter function. These store all of the users selections in a temporary object. That object gets sent to the API via the button/placeOrder() to be saved permanently.  
+
 4. You used the `map()` array method in the self assessment _(at least, you should have since it is a learning objective)_. Explain why that function is helpful as a replacement for a `for..of` loop.
-   > Your answer here
+   > .map creates a new array that the program can use to iterate over and generate HTML. It is easier to convert the data from a .map into a string than in a for...of loop, which is crucial when generating HTML. A simple .join can convert the created array into a string to be used in the HTML.    

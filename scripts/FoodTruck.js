@@ -11,10 +11,10 @@ const handleOrder = (clickEvent) => {
 }
 
 export const FoodTruck = async () => {
-    const salesHTML = await Sales()
     const entreeHTML = await Entrees()
     const vegetableHTML = await Veggies()
     const sideHTML = await Sides()
+    const salesHTML = await Sales()
 
     document.addEventListener("click", handleOrder)
 
